@@ -1,16 +1,53 @@
 <!DOCTYPE html>
 <html>
 
-    <head>
-        <link rel="stylesheet" href="style.css">
-        <title>eWeather</title>
-    </head>
+<head>
+    <link rel="stylesheet" href="style.css">
+    <title>eWeather</title>
+</head>
 
-    <body>
-      <h1>Weather Information for Amsterdam</h1>
-      <div id="weather-data"></div>
-      
-      <script src="script.js"></script>
-    </body>
+<body>
+    <!-- Page title -->
+    <h1>Weather Information for Amsterdam</h1>
+
+    <!-- Container for weather data -->
+    <div id="weather-data" class="weather-container">
+
+        <!-- Each row contains weather data with an image -->
+
+        <div class="weather-row">
+            <img src="template.png" alt="Temperature Icon" class="weather-icon" id="temperature-icon">
+            <p>Temperature: <span id="temperature"></span></p>
+        </div>
+
+        <div class="weather-row">
+            <img src="template.png" alt="Feel Temperature Icon" class="weather-icon" id="feel-temperature-icon">
+            <p>Feel Temperature: <span id="feel-temperature"></span></p>
+        </div>
+
+        <div class="weather-row">
+            <img src="template.png" alt="Ground Temperature Icon" class="weather-icon" id="ground-temperature-icon">
+            <p>Ground Temperature: <span id="ground-temperature"></span></p>
+        </div>
+
+        <div class="weather-row">
+            <img src="template.png" alt="Sun Power Icon" class="weather-icon" id="sun-power-icon">
+            <p>Sun Power: <span id="sun-power"></span></p>
+        </div>
+        
+        <div class="weather-row">
+            <img src="template.png" alt="Rainfall Icon" class="weather-icon" id="rain-fall-icon">
+            <p>Rain Fall Last 24 Hours: <span id="rain-fall"></span></p>
+        </div>
+
+        <div class="weather-row">
+            <img src="template.png" alt="Wind Direction Icon" class="weather-icon" id="wind-direction-icon">
+            <p>Wind Direction: <span id="wind-direction"></span></p>
+        </div>
+
+    </div>
+
+        <script src="script.js"></script>
+</body>
 
 </html>

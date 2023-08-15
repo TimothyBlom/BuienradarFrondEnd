@@ -4,35 +4,48 @@ const apiUrl = 'https://data.buienradar.nl/2.0/feed/json';
 // Get a reference to the weather-data div
 const weatherDataDiv = document.getElementById('weather-data');
 
-// Make a GET request to the API
-fetch(apiUrl)
-  .then(response => response.json())
-  .then(data => {
-    // Extract the relevant data from the API response for Amsterdam
-    const amsterdamData = data.actual.stationmeasurements.find(station => station.stationid === 6275);
+// Weather information details with labels, IDs, and units
+const weatherInfo = [
+    { label: 'Temperature', id: 'temperature', unit: '°C' },
+    { label: 'Feel Temperature', id: 'feel-temperature', unit: '°C' },
+    { label: 'Ground Temperature', id: 'ground-temperature', unit: '°C' },
+    { label: 'Sun Power', id: 'sun-power', unit: 'W/m²' },
+    { label: 'Rain Fall Last 24 Hours', id: 'rain-fall', unit: 'mm' },
+    { label: 'Wind Direction', id: 'wind-direction' }
+];
 
-    if (amsterdamData) {
-      const temperature = amsterdamData.temperature;
-      const feelTemperature = amsterdamData.feeltemperature;
-      const groundTemperature = amsterdamData.groundtemperature;
-      const sunPower = amsterdamData.sunpower;
-      const rainFallLast24Hour = amsterdamData.rainFallLast24Hour;
-      const windDirection = amsterdamData.winddirection;
+// Function to update weather data in the UI
+function updateWeatherData(data) {
+    weatherInfo.forEach(item => {
+        const span = document.getElementById(item.id);
+        if (span) {
+            const value = data[item.id] || 'N/A';
+            span.textContent = value + (item.unit || '');
+        }
+    });
+}
 
-      // Update the content of the weather-data div
-      weatherDataDiv.innerHTML = `
-        <p>Temperature: ${temperature} °C </p>
-        <p>Feel Temperature: ${feelTemperature} °C </p>
-        <p>Ground Temperature: ${groundTemperature} °C </p>
-        <p>Sun Power: ${sunPower} W/m² </p>
-        <p>Rain Fall Last 24 Hours: ${rainFallLast24Hour} mm </p>
-        <p>Wind Direction: ${windDirection} </p>
-      `;
-    } else {
-      weatherDataDiv.innerHTML = '<p>Weather data not available for Amsterdam</p>';
-    }
-  })
-  .catch(error => {
+// Function to handle errors and update UI accordingly
+function handleError(error) {
     console.error('Error fetching data:', error);
-    weatherDataDiv.innerHTML = '<p>Error fetching weather data</p>';
-});
+    weatherInfo.forEach(item => {
+        const span = document.getElementById(item.id);
+        if (span) {
+            span.textContent = 'Error';
+        }
+    });
+}
+
+// Fetch weather data from the API
+fetch(apiUrl)
+    .then(response => response.json())
+    .then(data => {
+        // Extract the relevant data for Amsterdam
+        const amsterdamData = data.actual.stationmeasurements.find(station => station.stationid === 6275);
+        if (amsterdamData) {
+            updateWeatherData(amsterdamData);
+        } else {
+            handleError('Data not available for Amsterdam');
+        }
+    })
+    .catch(handleError);

@@ -6,3 +6,94 @@ body {
   height: 100vh;
   margin: 0;
 }
+
+/* Style for the image */
+.weather-icon {
+  width: 30px;
+  height: 30px;
+  margin-right: 10px;
+}
+
+/* Style for the row of weather data */
+.weather-row {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+/* Style for flex container wrapping every 3 rows */
+.weather-container {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+/* Style for each row within the flex container */
+.weather-row {
+  width: calc(33.33% - 10px); /* Adjust for spacing */
+  box-sizing: border-box;
+  padding: 5px;
+}
+
+/* Style for the image */
+.weather-icon {
+    width: 30px;
+    height: 30px;
+    margin-right: 10px;
+}
+
+/* Style for the row of weather data */
+.weather-row {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+/* Style for flex container wrapping every 3 rows */
+.weather-container {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+/* Style for each row within the flex container */
+.weather-row {
+    width: calc(33.33% - 10px); /* Adjust for spacing */
+    box-sizing: border-box;
+    padding: 5px;
+}
+
+.weather-row {
+flex-direction: column; /* Change to column layout */
+align-items: center;
+}
+
+.weather-row p {
+margin: 0; /* Remove default margin */
+text-align: center; /* Center-align the text */
+}
+
+.weather-row span {
+display: block; /* Display the span as a block element */
+font-size: 18px; /* Adjust font size as needed */
+font-weight: bold; /* Adjust font weight as needed */
+}
+
+.weather-row {
+display: flex;
+align-items: center;
+margin-bottom: 10px;
+}
+
+.weather-icon {
+flex-shrink: 0; /* Prevent image from shrinking */
+}
+
+.weather-row p {
+margin: 0; /* Remove default margin */
+text-align: left; /* Align text to the left */
+}
+
+.weather-row span {
+display: block;
+font-size: 18px;
+font-weight: bold;
+}
