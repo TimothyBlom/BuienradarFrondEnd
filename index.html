@@ -7,47 +7,62 @@
 </head>
 
 <body>
-    <!-- Page title -->
+
     <h1>Weather Information for Amsterdam</h1>
 
-    <!-- Container for weather data -->
     <div id="weather-data" class="weather-container">
-
-        <!-- Each row contains weather data with an image -->
 
         <div class="weather-row">
             <img src="template.png" alt="Temperature Icon" class="weather-icon" id="temperature-icon">
-            <p>Temperature: <span id="temperature"></span></p>
+            <p class="weather-item">
+                <span id="temperature"></span>
+                Temperature
+            </p>
         </div>
 
         <div class="weather-row">
             <img src="template.png" alt="Feel Temperature Icon" class="weather-icon" id="feel-temperature-icon">
-            <p>Feel Temperature: <span id="feel-temperature"></span></p>
+            <p class="weather-item">
+                <span id="feeltemperature"></span>
+                Feel Temperature
+            </p>
         </div>
 
         <div class="weather-row">
             <img src="template.png" alt="Ground Temperature Icon" class="weather-icon" id="ground-temperature-icon">
-            <p>Ground Temperature: <span id="ground-temperature"></span></p>
+            <p class="weather-item">
+                <span id="groundtemperature"></span>
+                Ground Temperature
+            </p>
         </div>
 
         <div class="weather-row">
             <img src="template.png" alt="Sun Power Icon" class="weather-icon" id="sun-power-icon">
-            <p>Sun Power: <span id="sun-power"></span></p>
+            <p class="weather-item">
+                <span id="sunpower"></span>
+                Sun Power
+            </p>
         </div>
         
         <div class="weather-row">
             <img src="template.png" alt="Rainfall Icon" class="weather-icon" id="rain-fall-icon">
-            <p>Rain Fall Last 24 Hours: <span id="rain-fall"></span></p>
+            <p class="weather-item">
+                <span id="rainFallLast24Hour"></span>
+                Rain Fall Last 24 Hours
+            </p>
         </div>
 
         <div class="weather-row">
             <img src="template.png" alt="Wind Direction Icon" class="weather-icon" id="wind-direction-icon">
-            <p>Wind Direction: <span id="wind-direction"></span></p>
+            <p class="weather-item">
+                <span id="winddirection"></span>
+                Wind Direction
+            </p>
         </div>
 
     </div>
 
-        <script src="script.js"></script>
-</body>
+    <script src="script.js"></script>
 
+</body>
 </html>
