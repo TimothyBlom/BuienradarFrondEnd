@@ -2,61 +2,66 @@
 <html>
 
 <head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
     <link rel="stylesheet" href="style.css">
     <title>eWeather</title>
 </head>
 
 <body>
 
-    <h1>Weather Information for Amsterdam</h1>
+    <img src="eweatherLogo.png" alt="eWeather Logo" class="eweather-Logo">
+
+    <h1>Amsterdam</h1>
 
     <div id="weather-data" class="weather-container">
 
+        <!-- Note: the font-awesome icons are not correct to the icons in the mockup, those icons are not available for free -->
+
         <div class="weather-row">
-            <img src="template.png" alt="Temperature Icon" class="weather-icon" id="temperature-icon">
+            <i class="fa-solid fa-temperature-three-quarters weather-icon"></i>
             <p class="weather-item">
                 <span id="temperature"></span>
-                Temperature
+                Actuele temperatuur
             </p>
         </div>
 
         <div class="weather-row">
-            <img src="template.png" alt="Feel Temperature Icon" class="weather-icon" id="feel-temperature-icon">
+            <i class="fa-solid fa-temperature-low weather-icon"></i>
             <p class="weather-item">
                 <span id="feeltemperature"></span>
-                Feel Temperature
+                Gevoelstemperatuur
             </p>
         </div>
 
         <div class="weather-row">
-            <img src="template.png" alt="Ground Temperature Icon" class="weather-icon" id="ground-temperature-icon">
+            <i class="fa-solid fa-temperature-arrow-down weather-icon"></i>
             <p class="weather-item">
                 <span id="groundtemperature"></span>
-                Ground Temperature
+                Grond temperatuur
             </p>
         </div>
 
         <div class="weather-row">
-            <img src="template.png" alt="Sun Power Icon" class="weather-icon" id="sun-power-icon">
+            <i class="fa-solid fa-sun weather-icon"></i>
             <p class="weather-item">
                 <span id="sunpower"></span>
-                Sun Power
+                Zonnekracht
             </p>
         </div>
         
         <div class="weather-row">
-            <img src="template.png" alt="Rainfall Icon" class="weather-icon" id="rain-fall-icon">
+            <i class="fa-solid fa-cloud-rain weather-icon"></i>
             <p class="weather-item">
-                <span id="rainFallLast24Hour"></span>
-                Rain Fall Last 24 Hours
+                <span id="rainFallLastHour"></span>
+                Regen laatste uur
             </p>
         </div>
 
         <div class="weather-row">
-            <img src="template.png" alt="Wind Direction Icon" class="weather-icon" id="wind-direction-icon">
+            <i class="fa-solid fa-wind weather-icon"></i>
             <p class="weather-item">
                 <span id="winddirection"></span>
-                Wind Direction
+                Windrichting
             </p>
         </div>
 
